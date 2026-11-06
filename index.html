@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pharmagistics</title>
+<meta name="description" content="Pharmagistics: pharmacy informatics for hospitals and 340B programs. Tested tools that turn pharmacy extracts into worklists.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top"><b>Pharmagistics</b><span>Pharmacy informatics</span></a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#pipeline">See it run</a>
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="top">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Hospital pharmacy and 340B</p>
+        <h1>Find the revenue and compliance gaps in your pharmacy extracts.</h1>
+        <p class="lede">Tested tools that turn Epic, McKesson, 340B TPA, CMS and FDA files into worklists.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#work">See the work</a>
+          <a class="button" href="#pipeline">Watch a weekly run</a>
+        </div>
+        <ul class="hero-facts">
+          <li><b>29</b> tools built</li>
+          <li><b>Runs inside your network</b></li>
+          <li><b>Every rule tested</b></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="pipeline">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">See it run</p>
+        <h2>One week of drug charges, start to finish</h2>
+        <p class="lede">Each dot is a charge line.</p>
+      </div>
+      <div class="flow-controls">
+        <div class="chips" id="flow-steps" role="group" aria-label="Step"></div>
+        <button class="chip" id="flow-play" type="button">Play</button>
+      </div>
+      <figure class="flow">
+        <div class="flow-scroll">
+          <svg id="flow-svg" viewBox="0 0 1080 392" role="img" aria-label="One weekly run. Epic charges pass through six steps: check, load, clean, enrich, sort and deliver. Formulary lists and two CMS files join at enrich, and location groups at sort. Delivery produces group workbooks, an executive summary, a run summary and NDC reports. Wrong files stop the run with nothing changed."></svg>
+        </div>
+        <figcaption class="flow-caption" id="flow-caption">
+          <h3 id="flow-title"></h3>
+          <p id="flow-text"></p>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Services</p>
+        <h2>Where pharmacy money and risk hide</h2>
+      </div>
+      <div class="services">
+        <div class="service">
+          <h3>340B integrity</h3>
+          <p>Split billing, eligibility audits and duplicate discounts.</p>
+          <ul><li>Split billing</li><li>MFP and MTF</li><li>Orphan exclusion</li><li>TB and JG</li></ul>
+        </div>
+        <div class="service">
+          <h3>Drug revenue integrity</h3>
+          <p>Unbilled waste, unit errors, non-payable codes and charge table faults.</p>
+          <ul><li>JW and JZ</li><li>HCPCS units</li><li>MUE</li><li>OPPS</li></ul>
+        </div>
+        <div class="service">
+          <h3>Purchasing and pricing</h3>
+          <p>Weekly catalog merges, price parity, vial-size and biosimilar savings.</p>
+          <ul><li>GPO, PHS, WAC</li><li>Price parity</li><li>Vial size</li><li>Biosimilars</li></ul>
+        </div>
+        <div class="service">
+          <h3>Item and formulary data</h3>
+          <p>Expired NDCs, failing bedside barcodes, CDM upkeep and formulary cost.</p>
+          <ul><li>NDC 5-4-2</li><li>BCMA</li><li>CDM</li><li>Medi-Span</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="approach">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">How it works</p>
+        <h2>From your files to weekly answers</h2>
+      </div>
+      <ol class="steps">
+        <li><h3>Map your extracts</h3><p>What each file holds and what it can answer.</p></li>
+        <li><h3>Build on your data</h3><p>Tested Python that checks every file as it arrives.</p></li>
+        <li><h3>Run it or hand it over</h3><p>Weekly worklists, run by me or your staff.</p></li>
+      </ol>
+      <p class="assurance">Your data stays on your systems. Nothing is uploaded.</p>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">The work</p>
+        <h2>Tools built</h2>
+      </div>
+      <div class="filters">
+        <div class="chips" id="area-filter" role="group" aria-label="Problem area"></div>
+        <div class="filter-row">
+          <div class="field">
+            <label for="source-filter">Reads</label>
+            <select id="source-filter"><option value="all">Any data source</option></select>
+          </div>
+          <div class="field">
+            <label for="work-search">Search</label>
+            <input id="work-search" type="search" placeholder="JW, biosimilar, barcode…" autocomplete="off">
+          </div>
+          <p class="count" id="work-count" aria-live="polite"></p>
+        </div>
+      </div>
+      <div class="work-grid" id="work-grid"></div>
+    </div>
+  </section>
+
+  <section id="data">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">The data</p>
+        <h2>Extracts I read</h2>
+      </div>
+      <div class="extracts" id="extract-list"></div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap about">
+      <div>
+        <p class="eyebrow">About</p>
+        <h2>Jacob McDonald, founder</h2>
+        <p style="margin-top:16px">Hospital pharmacy informatics. Every result is checked against a manual review or the previous version before anyone relies on it.</p>
+      </div>
+      <div>
+        <h3 style="margin-bottom:12px">What you get</h3>
+        <ul>
+          <li>Workbooks your staff already use</li>
+          <li>Rules cited to CMS or HRSA</li>
+          <li>Tests on every rule</li>
+          <li>Documented code you own</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap contact-box">
+      <p class="eyebrow">Contact</p>
+      <h2>Engagement inquiries</h2>
+      <p class="lede">Please direct inquiries to Pharmagistics through the channels below.</p>
+      <!-- Placeholder links: set the real addresses at LLC launch. -->
+      <ul class="contact-links">
+        <li><a class="button primary" href="#">Email</a></li>
+        <li><a class="button" href="#">LinkedIn</a></li>
+        <li><a class="button" href="#">GitHub</a></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Jacob McDonald · pharmagistics.io</span>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
