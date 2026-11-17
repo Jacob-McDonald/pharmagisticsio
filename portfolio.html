@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Portfolio · Pharmagistics</title>
+<meta name="description" content="Pharmagistics portfolio: a closer look at the pharmacy data tools.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html"><b>Pharmagistics</b><span>Pharmacy informatics</span></a>
+    <nav class="nav" aria-label="Sections">
+      <a href="index.html#pipeline">See it run</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#work">Work</a>
+      <a href="portfolio.html" aria-current="page">Portfolio</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Portfolio</p>
+      <h1>A closer look at the work.</h1>
+      <div class="folio" id="folio" style="margin-top:32px"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Jacob McDonald · pharmagistics.io</span>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script>
+"use strict";
+// Only tools with pages of their own (a `slug` in data.js) appear here.
+document.getElementById("folio").innerHTML = PROJECTS.filter((p) => p.slug).map((p) => {
+  const [color, icon] = p.icon ? [p.color, p.icon] : AREA_LOOK[p.areas[0]];
+  return `
+  <article class="folio-card c-${color}">
+    <div class="folio-thumb"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="${icon}"/></svg></div>
+    <p class="eyebrow">${p.areas.map((a) => AREAS[a]).join(" · ")}</p>
+    <h3><a href="project.html?p=${p.slug}">${p.name}</a></h3>
+    <p>${p.what}</p>
+    <p class="folio-links"><a href="project.html?p=${p.slug}&how">How it works</a></p>
+  </article>`;
+}).join("");
+</script>
+</body>
+</html>
